@@ -66,7 +66,7 @@
 
     <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
         <div class="w3-display-topleft w3-padding-large w3-xlarge blackText">
-            Made by: xD
+            Made by: Addamsovi
         </div>
         <div class="w3-display-middle">
             <h1 class="w3-jumbo w3-animate-top blackText w3-center">Saint Blockchain</h1>
@@ -92,6 +92,38 @@
                                     //alert(response.balance);
                                     $("#show").text("Your balance: " + response.balance);
 
+                                },
+                                error: function(xhr, status) {
+                                    alert("error");
+                                    console.log(xhr);
+                                    console.log(status);
+                                }
+                            });
+                        });
+                        
+                        $(function() {
+                            console.log("ready!");
+                            $.ajax({
+                                url: "http://169.254.161.196:8888/getprojects",
+                                type: "GET",
+                                success: function(response) {
+                                    //console.log(response);
+                                    //alert(response.balance);
+                                    //parse data
+                                    var obj = JSON.parse(response);
+                                    console.log(obj);
+                                    console.log(obj.length);
+                                    //project, description, gathered sum, address
+                                    var mytable = "<table cellpadding=\"0\" cellspacing=\"0\"><tbody><tr>Project     </tr><tr>Description     </tr><tr>Gathered sum     </tr><tr>Address     </tr>";
+                                    for (var i = 0; i < obj.length; i++) {
+                                        mytable += "<tr>";
+                                        //mytable +=
+                                        mytable += "</tr><tr>";
+                                        mytable += "<td>" + obj[i].description + "</td>";
+                                    }
+                                    mytable += "</tr></tbody></table>";
+                                    $("#projects").html(mytable);
+                                    
                                 },
                                 error: function(xhr, status) {
                                     alert("error");
@@ -151,6 +183,10 @@
                         </td>
                     </tr>
                 </table>
+            </div>
+            <div>
+                <p class="w3-large w3-center blackText"><i>Bet on these projects:</i></p>
+                <div id="projects"></div>
             </div>
             <script>
                 $("#donation").click(function() {
