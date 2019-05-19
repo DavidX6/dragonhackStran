@@ -155,7 +155,18 @@
                                     }
 
                                     $(".donation").click(function() {
-                                        $(this).text("Thank youuuuuu (*^_^*)");
+                                        var projaddr = $(this).text();
+                                        console.log("PR" + projaddr);
+                                        $.ajax({
+                                            url: addr+"/donate",
+                                            type: "POST",
+                                            data: JSON.stringify({ address : projaddr}),
+                                            contentType: "application/json, charset=utf 8",
+                                            dataType: "json",
+                                            success: function(response) {console.log("success")},
+                                            error: function(error) {alert("error in here"); console.log(error)}
+                                        });
+                                        //$(this).text("Thank youuuuuu (*^_^*)");
                                         var cnt = $("#show").val()
                                         cash -= 1;
                                         $("#show").text(cash);
