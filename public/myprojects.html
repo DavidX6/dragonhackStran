@@ -70,7 +70,8 @@
         </div>
         <div class="w3-display-topright w3-padding-large w3-xlarge blackText">
             <a href="/addProject.html">Create new project</a><br/>
-            <a href="/myprojects.html">My projects</a>
+            <a href="/myprojects.html">My projects</a><br/>
+            <a href="/app.html">Show projects</a>
         </div>
         <div class="w3-display-middle">
             <h1 class="w3-jumbo w3-animate-top blackText w3-center">Saint Blockchain</h1>
@@ -111,7 +112,7 @@
                                 }
                             });
                             $.ajax({
-                                url: addr+"/getprojects",
+                                url: addr+"/getuserprojects",
                                 type: "GET",
                                 success: function(response) {
                                     //console.log(response);
@@ -150,19 +151,7 @@
 
 
                             });
-                            $.ajax({
-                                url: addr+"/getcurrentuser",
-                                type: "GET",
-                                success: function(response) {
-                                    $("#addr").text("Your address: " + response.current_user);
 
-                                },
-                                error: function(xhr, status) {
-                                    alert("error");
-                                    console.log(xhr);
-                                    console.log(status);
-                                }
-                            });
 
                             // $.ajax({
                             //     url: addr+"/getnewaddress",
@@ -188,7 +177,6 @@
                     </div>
                 </div>
 
-            </p>
             <div class="w3-large w3-center blackText">
                 <table id="projects_table" style="border: 2px solid white">
                     <tr>

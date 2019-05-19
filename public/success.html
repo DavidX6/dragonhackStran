@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<title>Dragonhack 2019</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="/js/vis.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+    body {
+        background-color: black;
+    }
+
+    body,
+    h1 {
+        font-family: "Raleway", sans-serif
+    }
+
+    body,
+    html {
+        height: 100%
+    }
+
+    .bgimg {
+        background-image: url('/images/img.jpg');
+        min-height: 100%;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .blackText {
+        color: white;
+        font-weight: bold;
+    }
+
+    input[type=text],
+    select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+</style>
+
+<body>
+
+    <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+        <div class="w3-display-topleft w3-padding-large w3-xlarge blackText">
+            Made by: Addamsovi
+        </div>
+        <div class="w3-display-middle">
+            <h1 class="w3-jumbo w3-animate-top blackText w3-center">Saint Blockchain</h1>
+            <hr class="w3-border-grey" style="margin:auto;width:40%">
+            <p class="w3-large w3-center blackText"><i>Project successfuly created</i></p>
+            <p class="w3-large w3-center blackText">
+                <!-- Our best app yet! -->
+
+
+                <div>
+                    <!-- <div class="w3-large w3-center blackText" style="margin: 10px 10px 10px 10px;" id="show"></div> -->
+                    <script>
+                        /*global $*/
+
+
+                        $(function() {
+                            // console.log("ready!");
+                            // var addr = "http://192.168.1.5:8888";
+                            // $.ajax({
+                            //     url: addr+"/getbalance",
+                            //     type: "GET",
+                            //     success: function(response) {
+                            //         console.log(response.balance);
+                            //         //alert(response.balance);
+                            //         $("#show").text("Your balance: " + response.balance);
+                            //
+                            //     },
+                            //     error: function(xhr, status) {
+                            //         alert("error");
+                            //         console.log(xhr);
+                            //         console.log(status);
+                            //     }
+                            // });
+                            // $.ajax({
+                            //     url: addr+"/getnewaddress",
+                            //     type: "GET",
+                            //     success: function(response) {
+                            //         console.log(response.balance);
+                            //         //alert(response.balance);
+                            //         $("#addr").text("Your address: " + response.new_address);
+                            //
+                            //     },
+                            //     error: function(xhr, status) {
+                            //         alert("error");
+                            //         console.log(xhr);
+                            //         console.log(status);
+                            //     }
+                            // });
+                        });
+
+                    </script>
+
+                    <div style="text-align: center;">
+                      <a href="/app.html">Show projects</a><br/>
+                      <a href="/myprojects.html">My projects</a><br/>
+                        <a href="/addProject.html">Add another</a>
+                    </div>
+                </div>
+
+            <div class="w3-large w3-center blackText">
+
+            </div>
+            <script>
+                $("#donation").click(function() {
+                    $("#donation").text("Thank youuuuuu (*^_^*)");
+                    var cnt = $("#show").val()
+
+                    $("#show").text(5000 - Math.random() * 100);
+                })
+                $("#donation2").click(function() {
+                    $("#donation2").text("Thank youuuuuu (*^_^*)");
+                    var cnt = $("#show").val()
+
+                    $("#show").text(5000 - Math.random() * 100);
+                })
+
+            </script>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
