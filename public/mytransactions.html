@@ -24,7 +24,6 @@
 
     .bgimg {
         background-image: url('/images/img.jpg');
-        background-repeat: repeat;
         min-height: 100%;
         background-position: center;
         background-size: cover;
@@ -82,21 +81,6 @@
       background-color: rgba(255, 255, 255, 0.9);
       color: black;
     }
-    
-    a {
-    width: 100%;
-      background-color: #4CAF50;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    text-decoration:none;
-    }
-    a:hover {
-        background-color: #45a049;
-    }
 
 </style>
 
@@ -107,10 +91,9 @@
             Made by: Addamsovi
             <p class="w3-medium blackText">Our best app yet!</p>
         </div>
-        <div class="w3-display-topright w3-padding-large w3-xlarge blackText" style="padding-top: 50px">
-            <a href="/addProject.html">Create new project</a><br/><br/>
+        <div class="w3-display-topright w3-padding-large w3-xlarge blackText">
+            <a href="/addProject.html">Create new project</a><br/>
             <a href="/myprojects.html">My projects</a>
-            <a href="/mytransactions.html">My transactions</a>
         </div>
         <div class="w3-display-middle">
             <h1 class="w3-jumbo w3-animate-top blackText w3-center">Saint Blockchain</h1>
@@ -150,7 +133,7 @@
                                 }
                             });
                             $.ajax({
-                                url: addr+"/getprojects",
+                                url: addr+"/gettransactions",
                                 type: "GET",
                                 success: function(response) {
                                     //console.log(response);
@@ -162,7 +145,7 @@
                                     //project, description, gathered sum, address
                                     //var mytable = "<table cellpadding=\"0\" cellspacing=\"0\"><tbody><tr>Project     </tr><tr>Description     </tr><tr>Gathered sum     </tr><tr>Address     </tr>";
                                     for (var i = 0; i < obj.length; i++) {
-                                        var record = $("<tr><td>"+obj[i].description+"</td><td>"+obj[i].gathered+"<img src=\"images/coin.png\" style=\"height: 25px; width: 25px;\"></td><td><p class=\"donation\">"+obj[i].address+"</p></td></tr>");
+                                        var record = $("<tr><td>"+obj[i].from_address+"</td><td>"+obj[i].to_address+"<img src=\"images/coin.png\" style=\"height: 25px; width: 25px;\"></td></tr>");
                                         //mytable += "<tr>";
                                         //mytable +=
                                         //mytable += "</tr><tr>";
@@ -243,7 +226,6 @@
                 <table id="projects_table" style="border: 2px solid white; background: rgba(0,0,0,0.8);">
                     <tr>
                         <th>Project</th>
-                        <th>Gathered sum</th>
                         <th>Address</th>
                     </tr>
                     <!-- <tr>
