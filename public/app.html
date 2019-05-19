@@ -133,8 +133,8 @@
                                     }
 
                                     $(".donation").click(function() {
-                                        var projaddr = $(this).val();
-                                        console.log(projaddr);
+                                        var projaddr = $(this).text();
+                                        console.log("PR" + projaddr);
                                         $.ajax({
                                             url: addr+"/donate",
                                             type: "POST",
