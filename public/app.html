@@ -59,6 +59,28 @@
     input[type=submit]:hover {
         background-color: #45a049;
     }
+    
+    #projects_table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    #projects_table td, #projects_table th {
+      border: 1px solid #ddd;
+    }
+
+    #projects_table tr:hover {
+        color: black;
+        background-color: rgba(255, 255, 255, 0.5);;
+    }
+
+    #projects_table th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: black;
+    }
 
 </style>
 
@@ -67,6 +89,7 @@
     <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
         <div class="w3-display-topleft w3-padding-large w3-xlarge blackText">
             Made by: Addamsovi
+            <p class="w3-medium blackText">Our best app yet!</p>
         </div>
         <div class="w3-display-topright w3-padding-large w3-xlarge blackText">
             <a href="/addProject.html">Create new project</a><br/>
@@ -76,10 +99,9 @@
             <h1 class="w3-jumbo w3-animate-top blackText w3-center">Saint Blockchain</h1>
             <hr class="w3-border-grey" style="margin:auto;width:40%">
             <p class="w3-large w3-center blackText"><i id="addr">Your address: XvydfH5745SDRZD</i></p>
-            <p class="w3-large w3-center blackText">
-                Our best app yet!
-
-
+            <p class="w3-large w3-center blackText" style="padding-top: 50px">
+                My account
+                
                 <div>
                     <div class="w3-large w3-center blackText" style="margin: 10px 10px 10px 10px;" id="show"></div>
                     <script>
@@ -201,7 +223,7 @@
 
             </p>
             <div class="w3-large w3-center blackText">
-                <table id="projects_table" style="border: 2px solid white">
+                <table id="projects_table" style="border: 2px solid white; background: rgba(0,0,0,0.8);">
                     <tr>
                         <th>Project</th>
                         <th>Gathered sum</th>
