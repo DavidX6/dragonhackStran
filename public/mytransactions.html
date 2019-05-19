@@ -94,7 +94,6 @@
         <div class="w3-display-topright w3-padding-large w3-xlarge blackText">
             <a href="/addProject.html">Create new project</a><br/>
             <a href="/myprojects.html">My projects</a>
-            <a href="/mytransactions.html">My transactions</a>
         </div>
         <div class="w3-display-middle">
             <h1 class="w3-jumbo w3-animate-top blackText w3-center">Saint Blockchain</h1>
@@ -134,7 +133,7 @@
                                 }
                             });
                             $.ajax({
-                                url: addr+"/getprojects",
+                                url: addr+"/gettransactions",
                                 type: "GET",
                                 success: function(response) {
                                     //console.log(response);
@@ -146,7 +145,7 @@
                                     //project, description, gathered sum, address
                                     //var mytable = "<table cellpadding=\"0\" cellspacing=\"0\"><tbody><tr>Project     </tr><tr>Description     </tr><tr>Gathered sum     </tr><tr>Address     </tr>";
                                     for (var i = 0; i < obj.length; i++) {
-                                        var record = $("<tr><td>"+obj[i].description+"</td><td>"+obj[i].gathered+"<img src=\"images/coin.png\" style=\"height: 25px; width: 25px;\"></td><td><p class=\"donation\">"+obj[i].address+"</p></td></tr>");
+                                        var record = $("<tr><td>"+obj[i].from_address+"</td><td>"+obj[i].to_address+"<img src=\"images/coin.png\" style=\"height: 25px; width: 25px;\"></td></tr>");
                                         //mytable += "<tr>";
                                         //mytable +=
                                         //mytable += "</tr><tr>";
@@ -227,7 +226,6 @@
                 <table id="projects_table" style="border: 2px solid white; background: rgba(0,0,0,0.8);">
                     <tr>
                         <th>Project</th>
-                        <th>Gathered sum</th>
                         <th>Address</th>
                     </tr>
                     <!-- <tr>
